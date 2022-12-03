@@ -5,13 +5,10 @@
 use std::fs;
 
 fn main() {
-    let file_path = "input";
-    let file_contents_full = fs::read_to_string(file_path).unwrap();
-    let file_contents_lines = file_contents_full.lines();
-
+    let file_contents = fs::read_to_string("input").unwrap();
     let mut score: i32 = 0;
 
-    for line in file_contents_lines {
+    for line in file_contents.lines() {
         // I need to lose
         if line.chars().nth(2).unwrap() == 'X' {
             if line.chars().nth(0).unwrap() == 'A' {
