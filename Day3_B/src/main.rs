@@ -1,4 +1,4 @@
-use std::{fs, iter::Enumerate, collections::linked_list::IterMut};
+use std::fs;
 
 fn main() {
     let file_contents = fs::read_to_string("input").unwrap();
