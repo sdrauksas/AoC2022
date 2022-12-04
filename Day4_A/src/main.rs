@@ -15,23 +15,12 @@ fn main() {
         let s_start = s_sections[0].parse::<i32>().unwrap();
         let s_end = s_sections[1].parse::<i32>().unwrap();
 
-        if f_start == s_start {
-            // If the section starts are equal, then one of them will be fully
-            // overlapping the other
+        if f_start <= s_start && f_end >= s_end {
+            // If the second section is within the first section
             count = count + 1;
         }
-        else if f_start < s_start && f_end >= s_start && f_end >= s_end {
-            // If the first section's start is smaller than the second section's
-            // start and the second's start is smaller than the first's end,
-            // the sections will overlap only if the ends are equal or the first
-            // is bigger
-            count = count + 1;
-        }
-        else if f_start > s_start && f_start <= s_end && f_end <= s_end {
-            // If the first section's start is bigger than the second section's
-            // start and the first's start is smaller than the seconds's end,
-            // the sections will overlap only if the ends are equal or the
-            // second is bigger
+        else if f_start >= s_start && f_end <= s_end {
+            // If the first section is within the second section
             count = count + 1;
         }
     }

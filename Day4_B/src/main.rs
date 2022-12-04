@@ -15,7 +15,6 @@ fn main() {
         let s_start = s_sections[0].parse::<i32>().unwrap();
         let s_end = s_sections[1].parse::<i32>().unwrap();
 
-
         if s_start >= f_start && s_start <= f_end {
             // If the second section's start is within the first section's range
             count = count + 1; 
